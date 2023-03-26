@@ -15,8 +15,3 @@ pnpm install
 
 pnpm run test
 ```
-
-# Problem
-
-see `./test/index.spec.ts` file `not working` part，[link](https://github.com/GreenMashimaro/bug-reproduce-vitest-domock/blob/main/test/index.spec.ts#L19-L37)
-

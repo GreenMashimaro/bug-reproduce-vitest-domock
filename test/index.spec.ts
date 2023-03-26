@@ -4,7 +4,7 @@ describe('test main', () => {
 
   // normal work
   it('getUserMsg mock success', async function() {
-    vi.resetAllMocks()
+    vi.resetModules()
     vi.doMock('@/user/index', async () => {
       return {
         default: function() {
@@ -19,7 +19,7 @@ describe('test main', () => {
 
   // not working
   it('getUserMsg mock fail', async function() {
-    vi.resetAllMocks()
+    vi.resetModules()
     vi.doMock('@/user/index', async () => {
       return {
         default: function() {
@@ -34,7 +34,7 @@ describe('test main', () => {
 
   // not working
   it('getUserMsg real', async function() {
-    vi.resetAllMocks()
+    vi.resetModules()
     const { getUserMsg } = await import('@/index')
     expect(getUserMsg()).toBe('hello user')
   })
