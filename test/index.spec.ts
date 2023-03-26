@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 describe('test main', () => {
 
-  // not working
+  // normal work
   it('getUserMsg mock success', async function() {
     vi.doMock('@/user/index', async () => {
       return {
@@ -18,6 +18,7 @@ describe('test main', () => {
 
   // not working
   it('getUserMsg mock fail', async function() {
+    vi.doUnmock('@/user/index')
     vi.doMock('@/user/index', async () => {
       return {
         default: function() {
@@ -30,7 +31,7 @@ describe('test main', () => {
     vi.doUnmock('@/user/index')
   })
 
-  // normal work
+  // not working
   it('getUserMsg real', async function() {
     const { getUserMsg } = await import('@/index')
     expect(getUserMsg()).toBe('hello user')
