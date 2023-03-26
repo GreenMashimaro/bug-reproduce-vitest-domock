@@ -1,4 +1,4 @@
-# vite tree shaking bug reproduce
+# vite tree shaking bug reproduce(solved)
 
 # Issue link
 
