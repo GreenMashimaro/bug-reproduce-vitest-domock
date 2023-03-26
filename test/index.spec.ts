@@ -18,7 +18,6 @@ describe('test main', () => {
 
   // not working
   it('getUserMsg mock fail', async function() {
-    vi.doUnmock('@/user/index')
     vi.doMock('@/user/index', async () => {
       return {
         default: function() {
