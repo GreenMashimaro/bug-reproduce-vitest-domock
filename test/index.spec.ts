@@ -1,4 +1,3 @@
-import { getUserMsg } from '@/index'
 import { describe, expect, it, vi } from 'vitest'
 
 describe('test main', () => {
@@ -33,6 +32,7 @@ describe('test main', () => {
 
   // normal work
   it('getUserMsg real', async function() {
+    const { getUserMsg } = await import('@/index')
     expect(getUserMsg()).toBe('hello user')
   })
 })
