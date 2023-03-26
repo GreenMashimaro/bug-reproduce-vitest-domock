@@ -2,7 +2,6 @@ import { describe, expect, it, vi } from 'vitest'
 
 describe('test main', () => {
 
-  // normal work
   it('getUserMsg mock success', async function() {
     vi.resetModules()
     vi.doMock('@/user/index', async () => {
@@ -17,7 +16,6 @@ describe('test main', () => {
     vi.doUnmock('@/user/index')
   })
 
-  // not working
   it('getUserMsg mock fail', async function() {
     vi.resetModules()
     vi.doMock('@/user/index', async () => {
@@ -32,7 +30,6 @@ describe('test main', () => {
     vi.doUnmock('@/user/index')
   })
 
-  // not working
   it('getUserMsg real', async function() {
     vi.resetModules()
     const { getUserMsg } = await import('@/index')
